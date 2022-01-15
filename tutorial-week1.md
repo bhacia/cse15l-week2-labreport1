@@ -7,7 +7,7 @@ VSCode! There should be different versions you could download depending on your 
 example OSX for Apple Macbooks and Windows for PCs.
 
 When you're finished, open a window! It should look similar to this:
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-new-window.png)
 
 It may look different depending on your system and settings. For instance, the color theme shown is
 called "Tomorrow Night Blue". If you want to change your theme, follow these steps!
@@ -29,7 +29,7 @@ Now look up your course-specific account for CSE15L [here](https://sdacs.ucsd.ed
 Then, in VSCode, open a new terminal, then type in your command, which will look like this, except
 **wi22** is replaced by the time you're taking this class, and **apl** is replaced by the letters
 in your course-specific account.
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-ssh-remote-connect.png)
 
 Your terminal is now connected to a computer in the CSE basement, meaning that any commands you run
 will run on that computer! In other terms, your computer is called the client and the UCSD computer
@@ -48,7 +48,7 @@ the letters in your course-specific account.)
 - cat /home/linux/ieng6/cs15lwi22/public/hello.txt
 
 Here's an example:
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-running-a-command.png)
 
 ## Moving Files with scp
 In this section, you'll learn how to copy files back and forth between the your comuter (client) and
@@ -58,24 +58,24 @@ running **exit** in your terminal.
 
 1. First make a random file, for instance HelloWorld.java, and run it using **javac** to compile and
 **java** to run.
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-create-and-run-file.png)
 
 2. Then run this command (using your own information as usual).
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-using-scp.png)
 
 3. Log into the server again through ssh, and run the **ls** command in the terminal. Now you should
 see the file in your home directory!
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-running-ls-on-server.png)
 
 4. Now run it again using **javac** and **java**.
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-running-file-on-server.png)
 
 ## Setting an SSH Key
 Notice how when you log into the server, you always have to type in your password, which can be time
 consuming. To avoid this, you can use **ssh** keys! First and foremost, log off of the server again.
 
 Now run this:
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-rsa-key-pair.png)
 
 Now you have two new files on your system: the private key (id_rsa) and the public key (id_rsa.pub),
 which are stored in the .ssh directory on your computer.
@@ -98,7 +98,7 @@ Now you should be able to log into the server without having to input your passw
 In this section, you're going to make a small local edit to the random file you made earlier. Then you're
 going to copy it over to the remote server and run it!
 
-insert ss
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-remote-running.png)
 
 Extra **useful** notes:
 - You can write a command in quotes at the end of an ssh command to directly run it on the remote server!
