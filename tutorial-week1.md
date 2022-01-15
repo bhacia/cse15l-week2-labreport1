@@ -92,12 +92,17 @@ Now you're going to copy the **public** key to the .ssh directory of your user a
 running this:
 
 $ ssh cs15lwi22apl@ieng6.ucsd.edu
+
 Enter your password.
 Now you're on the server!
+
 $ mkdir .ssh
+
 Log off of the server.
 Now you're back on the client!
+
 $ scp C:\Users\15624/.ssh/id_rsa.pub cs15lwi22apl@ieng6.ucsd.edu:~/.ssh/authorized_keys
+
 Use the **public** key you copied!
 
 Now you should be able to log into the server without having to input your password!
