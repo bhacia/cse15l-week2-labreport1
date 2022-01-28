@@ -28,7 +28,7 @@ Here you'll use VSCode to connect to a remote computer at UCSD.
 
 Now look up your course-specific account for CSE15L [here](https://sdacs.ucsd.edu/~icc/index.php).
 Then, in VSCode, open a new terminal, then type in your command, which will look like this, except
-**wi22** is replaced by the time you're taking this class, and **apl** is replaced by the letters
+`wi22` is replaced by the time you're taking this class, and `apl` is replaced by the letters
 in your course-specific account.
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-ssh-remote-connect.png)
@@ -39,15 +39,15 @@ is called the server.
 
 ## Trying Some Commands
 Try running a few commands! Here are some useful commands to get you started:
-- cd ~
-- cd
-- ls -lat
-- ls -a
-- ls <directory> where <directory> is /home/linux/ieng6/cs15lwi22/cs15lwi22abc
-(where again **wi22** is replaced by the time you're taking this class, and **apl** is replaced by
+- `cd ~`
+- `cd`
+- `ls -lat`
+- `ls -a`
+- `ls <directory>` where `<directory>` is `/home/linux/ieng6/cs15lwi22/cs15lwi22apl`
+(where again `wi22` is replaced by the time you're taking this class, and `apl` is replaced by
 the letters in your course-specific account.)
-- cp /home/linux/ieng6/cs15lwi22/public/hello.txt ~/
-- cat /home/linux/ieng6/cs15lwi22/public/hello.txt
+- `cp /home/linux/ieng6/cs15lwi22/public/hello.txt ~/`
+- `cat /home/linux/ieng6/cs15lwi22/public/hello.txt`
 
 Here's an example:
   
@@ -55,12 +55,12 @@ Here's an example:
 
 ## Moving Files with scp
 In this section, you'll learn how to copy files back and forth between the your comuter (client) and
-the UCSD computer (server). To do this, you'll use the **scp** command. Note that you'll always run
-this command from the *client*, and remember you shouldn't be logged into ieng6, so log out by
-running **exit** in your terminal.
+the UCSD computer (server). To do this, you'll use the `scp` command. Note that you'll always run
+this command from the *client*, and remember you **shouldn't** be logged into `ieng6`, so log out by
+running `exit` in your terminal.
 
-1. First make a random file, for instance HelloWorld.java, and run it using **javac** to compile and
-**java** to run.
+1. First make a random file, for instance `HelloWorld.java`, and run it using `javac` to compile and
+`java` to run.
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-create-and-run-file.png)
 
@@ -68,27 +68,27 @@ running **exit** in your terminal.
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-using-scp.png)
 
-3. Log into the server again through ssh, and run the **ls** command in the terminal. Now you should
+3. Log into the server again through `ssh`, and run the `ls` command in the terminal. Now you should
 see the file in your home directory!
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-running-ls-on-server.png)
 
-4. Now run it again using **javac** and **java**.
+4. Now run it again using `javac` and `java`.
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-running-file-on-server.png)
 
 ## Setting an SSH Key
 Notice how when you log into the server, you always have to type in your password, which can be time
-consuming. To avoid this, you can use **ssh** keys! First and foremost, log off of the server again.
+consuming. To avoid this, you can use `ssh` keys! First and foremost, log off of the server again.
 
 Now run this:
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-rsa-key-pair.png)
 
-Now you have two new files on your system: the private key (id_rsa) and the public key (id_rsa.pub),
-which are stored in the .ssh directory on your computer.
+Now you have two new files on your system: the private key (`id_rsa`) and the public key (`id_rsa.pub`),
+which are stored in the `.ssh` directory on your computer.
 
-Now you're going to copy the **public** key to the .ssh directory of your user account on the server by
+Now you're going to copy the **public** key to the `.ssh` directory of your user account on the server by
 running this:
 
 $ ssh cs15lwi22apl@ieng6.ucsd.edu
@@ -109,11 +109,17 @@ Now you should be able to log into the server without having to input your passw
 
 ## Optimizing Remote Running
 In this section, you're going to make a small local edit to the random file you made earlier. Then you're
-going to copy it over to the remote server and run it!
+going to copy it over to the remote server and run it using these shortcuts below!
+
+**Useful** shortcuts:
+- You can write a command in quotes at the end of a `ssh` command to directly run it on the remote server!
+- You can use semicolons to run multiple commands on the same line in most terminals!
+- You can use the up-arrow on your keyboard to recall the last command that was run!
 
 ![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-remote-running.png)
 
-Extra **useful** notes:
-- You can write a command in quotes at the end of an ssh command to directly run it on the remote server!
-- You can use semicolons to run multiple commands on the same line in most terminals!
-- You can use the up-arrow on your keyboard to recall the last command that was run!
+See how much easier it is? Without this process, you would've had to still move the file, log into the server,
+find where your Java file is, compile the file, then finally run the file. That could be at least 4 lines of
+code, which is about 130 keystrokes! However with these shortcuts, you only need to move the file, then compile 
+and run the file remotely! That's 3 lines of code at most, and by using the up-arrow to recall old commands,
+you only use at most 40 keystrokes! You could use even less keystrokes by copying the name of your file!
