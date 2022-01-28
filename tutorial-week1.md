@@ -91,21 +91,33 @@ which are stored in the `.ssh` directory on your computer.
 Now you're going to copy the **public** key to the `.ssh` directory of your user account on the server by
 running this:
 
-$ ssh cs15lwi22apl@ieng6.ucsd.edu
+1. `ssh cs15lwi22apl@ieng6.ucsd.edu`
 
-Enter your password.
+Then enter your password.
 Now you're on the server!
 
-$ mkdir .ssh
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-ssh-remote-connect-with-pw.png)
 
-Log off of the server.
+2. `mkdir .ssh`
+
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-make-.ssh-directory.png)
+
+3. Log off of the server using `exit`
+
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-log-off-of-server.png)
+
 Now you're back on the client!
 
-$ scp C:\Users\15624/.ssh/id_rsa.pub cs15lwi22apl@ieng6.ucsd.edu:~/.ssh/authorized_keys
+4. `scp C:\Users\15624/.ssh/id_rsa.pub cs15lwi22apl@ieng6.ucsd.edu:~/.ssh/authorized_keys`
 
-Use the **public** key you copied!
+Use the **public** key you copied! Then enter you password for the final time!
+
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-final-step-to-log-into-server-without-pw.png)
 
 Now you should be able to log into the server without having to input your password!
+Try it out! It should look similar to this! :)
+
+![Image](https://bhacia.github.io/cse15l-week2-labreport1/vscode-log-into-server-without-pw.png)
 
 ## Optimizing Remote Running
 In this section, you're going to make a small local edit to the random file you made earlier. Then you're
